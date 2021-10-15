@@ -19,14 +19,16 @@ public class EjB {
 
         //Pedimos los satos válidos para este ejercicio
         System.out.println("Introduzca un número de caracter");
-        int numero = teclado.nextInt();
+        char letra = teclado.next().charAt(0);
 
-        if (numero >= 48 && numero <= 57) {
+        if (letra >= 48 && letra <= 57) {
             System.out.println("Ha introducido un dígito");
-        } else if (numero >= 65 && numero <= 90) {
+        } else if (letra >= 65 && letra <= 90) {
             System.out.println("Ha introducido una letra mayúscula");
-        } else if (numero >= 97 && numero <= 122) {
+        } else if (letra >= 97 && letra <= 122) {
             System.out.println("Ha introducido una letra minúscula");
+        } else {
+            System.out.println("El dato introducido es erróneo");
         }
 
     }
