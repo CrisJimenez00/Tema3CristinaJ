@@ -44,12 +44,12 @@ public class BancoTetimo {
 
                 //Condición para que se cumpla el tiempo de pago
                 if (anios <= 30 && anios >= 5) {
-                    
+
                     int aniosLimite = anios + edadCliente;
 
                     //Condición para que no supere los 75 años pagando
                     if (aniosLimite > 75) {
-                        
+
                         System.out.println("No se le puede conceder el préstamo porque supera los 75 años pagando");
                     } else {
 
