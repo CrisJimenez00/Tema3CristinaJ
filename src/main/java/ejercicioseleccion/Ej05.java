@@ -56,9 +56,9 @@ public class Ej05 {
 
                     System.out.println("Introduzca la medida del radio: ");
                     double radioCirculo = entrada.nextDouble();
-                    double resultadoTriangulo = Math.pow(radioCirculo, 2) * Math.PI;
+                    double resultadoCirculo = Math.pow(radioCirculo, 2) * Math.PI;
 
-                    System.out.printf("El círculo tiene un área de: %.2f cm2", resultadoTriangulo);
+                    System.out.printf("El círculo tiene un área de: %.2f cm2", resultadoCirculo);
 
                 } else {
                     System.out.println("Ha seleccionado terminar");
