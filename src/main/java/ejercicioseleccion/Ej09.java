@@ -29,6 +29,7 @@ public class Ej09 {
                 break; 
 
         }
+        //Sale 100
         System.out.println(variable2);
 
     }

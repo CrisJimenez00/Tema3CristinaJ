@@ -10,7 +10,7 @@ package ejercicioseleccion;
  */
 public class Ej10 {
     public static void main(String[] args) {
-        int variable=3, variable2 = 0;
+        int variable=3, variable2;
         
         switch(variable){
 

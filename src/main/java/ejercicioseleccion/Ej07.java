@@ -29,7 +29,7 @@ public class Ej07 {
 
         switch (opcion) {
             case 1:
-                
+
                 System.out.println("Ha seleccionado calcular el área de un cuadrado...");
 
                 System.out.println("Introduzca un lado: ");
@@ -40,7 +40,7 @@ public class Ej07 {
 
                 break;
             case 2:
-                
+
                 System.out.println("Ha seleccionado calcular el área de un triángulo");
 
                 System.out.println("Introduzca la medida de la base: ");
@@ -54,7 +54,7 @@ public class Ej07 {
 
                 break;
             case 3:
-                
+
                 System.out.println("Ha seleccionado calcular el área de un círculo");
 
                 System.out.println("Introduzca la medida del radio: ");
@@ -64,7 +64,9 @@ public class Ej07 {
                 System.out.printf("El círculo tiene un área de: %.2f cm2", resultadoCirculo);
 
                 break;
-
+                
+            default:
+                break;
         }
     }
 
