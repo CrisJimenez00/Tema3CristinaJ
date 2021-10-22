@@ -8,18 +8,17 @@ package ejerciciosrepeticion;
  *
  * @author cristina
  */
-public class Ej11 {
+public class Ej13 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
         int num = 65;
         do {
 
             char letra = (char) num;
-            System.out.println(letra);
+            System.out.println(letra + " - " + num);
             num++;
 
         } while (num <= 90);

@@ -12,8 +12,9 @@ public class Ej03 {
 
     public static void main(String[] args) {
         int x = 15;
+        final int FINAL = 25;
 
-        for (int i = 1; i < 25; i++) {
+        for (int i = 1; i <= FINAL; i++) {
             System.out.print(x);
             System.out.print(" - ");
             x = x * 2;
