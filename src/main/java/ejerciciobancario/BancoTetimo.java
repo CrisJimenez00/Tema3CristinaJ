@@ -45,6 +45,7 @@ public class BancoTetimo {
                     //y menores de 65 años
                     if (edadCliente < 65 && edadCliente >= 18) {
                         do {
+                            
                             System.out.println("¿Cuánto dinero desea solicitar?");
                             dineroSolicitado = teclado.nextDouble();
 
@@ -52,6 +53,7 @@ public class BancoTetimo {
 
                             //Para que el cliente únicamente pida el dinero que puede
                             if (dineroSolicitado <= resultadoSolicitante) {
+                                
                                 do {
                                     System.out.println("¿En cuántos años quiere devolver la hipoteca?");
                                     anios = teclado.nextInt();
@@ -65,6 +67,7 @@ public class BancoTetimo {
                                         if (aniosLimite > 75) {
 
                                             System.out.println("No se le puede conceder el préstamo porque supera los 75 años pagando");
+                                        
                                         } else {
 
                                             System.out.println("FELICIDADES, SE LE HA CONCEDIDO EL PRÉSTAMO");
@@ -75,17 +78,30 @@ public class BancoTetimo {
                                         System.out.println("No le podemos conceder el préstamo por el tiempo");
                                     }
                                 } while (!(anios <= 30 && anios >= 5));
+                                
+                                
                             } else {
                                 System.out.println("No puede pedir esa cantidad, pruebe con menos dinero");
                             }
+                            
+                            
                         } while (!(dineroSolicitado <= resultadoSolicitante));
+                        
+                        
                     } else {
                         System.out.println("No se le concede el préstamo por la edad");
                     }
+                    
+                    
                 } while (!(edadCliente >= 18 && edadCliente < 65));
+                
+                
             } else {
                 System.out.println("Hasta la próxima");
             }
+            
+            
         } while (salir != 0);
+        
     }
 }
