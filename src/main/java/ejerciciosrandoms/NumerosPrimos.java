@@ -44,10 +44,10 @@ public class NumerosPrimos {
                     if (numeroUsuario >= 2 && numeroUsuario <= 600_000_000) {
 
                         //Para separar entre números par o impar
-                        if (numeroUsuario % 2 != 0 || numeroUsuario == 2) {
+                        if (numeroUsuario % 2 != 0) {
 
                             //
-                            for (int i = 3; i <= numeroUsuario / 2; i ++) {
+                            for (int i = 3; i <= numeroUsuario / 2; i+=2) {
 
                                 //La condición hace que mire si el resultado es exacto o no
                                 if (numeroUsuario % i != 0) {
@@ -55,17 +55,19 @@ public class NumerosPrimos {
                                     //Si no es exacto, significa que no 
                                     //tiene divisor, entonces cambia a true
                                     esPrimo = true;
+                                    
                                 } else {
 
                                     //Si es exacto, significa que i es su 
                                     //divisor, entonces no sería primo
                                     esPrimo = false;
+                                    
                                 }
                             }
 
                             //para que solamente sala 1 vez el resultado
                             //uso la variable anterior
-                            if (esPrimo == true) {
+                            if (esPrimo) {
                                 System.out.println("Es primo");
                             } else {
                                 System.out.println("No es primo");
@@ -85,8 +87,8 @@ public class NumerosPrimos {
                 case 2:
                     long numeroR = numeroRandom.nextInt(600_000_000 - 2 + 1) - 2;
                     //Para separar entre números par o impar
-                    if (numeroR % 2 != 0 || numeroR == 2) {
-                        for (int i = 3; i <= numeroR / 2; i ++) {
+                    if (numeroR % 2 != 0) {
+                        for (int i = 3; i <= numeroR / 2; i+=2) {
                             //La condición hace que mire si el resultado es exacto o no
                             if (numeroR % i != 0) {
                                 //Si no es exacto, significa que no 
@@ -97,11 +99,12 @@ public class NumerosPrimos {
                                 //Si es exacto, significa que i es su 
                                 //divisor, entonces no sería primo
                                 esPrimo = false;
+                                break;
                             }
                         }
                         //para que solamente sala 1 vez el resultado
                         //uso la variable anterior
-                        if (esPrimo == true) {
+                        if (esPrimo) {
                             System.out.println("Es primo el número " + numeroR);
                         } else {
                             continue;
