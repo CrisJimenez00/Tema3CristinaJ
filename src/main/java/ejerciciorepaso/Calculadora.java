@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author cristina
  */
 public class Calculadora {
+    private static Scanner teclado = new Scanner(System.in);
     
     //Método suma. Solo se utiliza en la clase Calculadora
     //Se le pone privado porque solo se usa en esta clase
@@ -21,42 +22,69 @@ public class Calculadora {
         int resultado = a + b;
         return resultado;
     }
+    //Método restar. Solo se utiliza en la clase Calculadora
+    //Se le pone privado porque solo se usa en esta clase
+    //Recibe dos parámetros y devuelve un entero
+    //Con el resultado de la resta de los parámetros
     private static int restar (int a, int b){
         int resultado = a - b;
         return resultado;
     }
+    
+    
+    //Método multiplicar. Solo se utiliza en la clase Calculadora
+    //Se le pone privado porque solo se usa en esta clase
+    //Recibe dos parámetros y devuelve un entero
+    //Con el resultado de la multiplicación de los parámetros
     private static int multiplicar (int a, int b){
         int resultado = a * b;
         return resultado;
     }
+    
+    
+    //Método dividir. Solo se utiliza en la clase Calculadora
+    //Se le pone privado porque solo se usa en esta clase
+    //Recibe dos parámetros y devuelve un entero
+    //Con el resultado de la división de los parámetros
     private static int dividir (int a, int b){
-        int resultado = a / b;
+        int resultado;
+        
+        try {
+            
+            resultado = a / b;
+            
+        } catch (ArithmeticException ae) {
+            
+            System.out.println("El valor de operador 2 es 0, con lo cual se pone 2");
+            b = 2;
+            resultado = a / b;
+        }
+        
         return resultado;
     }
-
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-
-        int operando1 = 0, operando2 = 0;
-        //Variable centinela
+    
+    
+    //Método mostrarMenu. Solo se utiliza en la clase Calculadora
+    //método privado. Muestra el menú por consola
+    private static void mostrarMenu(){
+        System.out.println("Opciones del programa"
+                + "\n1.Sumar"
+                + "\n2.Restar"
+                + "\n3.Multiplicar"
+                + "\n4.Dividir"
+                + "\n5.Salir");
+    }
+    
+    
+    private static int leerDato(int numero){
         boolean solicitarDatos = true;
-        String opcion;
-
-        //Comienzo del programa
-        System.out.println("Bienvenido al calculator");
-
-        do {
-            //Pedimos a los usuarios los datos correspondientes y controlamos excepciones
-            System.out.println("Introduce dos operandos");
-            do {
+        do{
+         do {
                 try {
-                    solicitarDatos = true;
                     //Bloque candidato a lanzar la excepcion
                     //(Podemos hacer el try catch a cada uno, pero esto es para repaso simple)
-                    System.out.println("Operando 1: ");
-                    operando1 = teclado.nextInt();
-                    System.out.println("Operando 2: ");
-                    operando2 = teclado.nextInt();
+                    System.out.println("Introduce número: ");
+                    numero= teclado.nextInt();
 
                     //Para controlar que los datos están correctamente introducidos.
                     solicitarDatos = false;
@@ -68,17 +96,50 @@ public class Calculadora {
                     teclado.nextLine();
                 }
             } while (solicitarDatos); // Bucle que controla la excepción
-        } while (!((operando1 > -100 && operando1 < 100) && (operando2 > -100 && operando2 < 100)));
+        } while (!(numero > -100 && numero < 100) );
+    
+        return numero;
+    
+    }
 
+    public static void main(String[] args) {
+        
+
+        int operando1 = 0, operando2 = 0;
+        //Variable centinela
+        boolean solicitarDatos = true;
+        String opcion;
+
+        //Comienzo del programa
+        System.out.println("Bienvenido al calculator");
+//        do{
+//         do {
+//                try {
+//                    //Bloque candidato a lanzar la excepcion
+//                    //(Podemos hacer el try catch a cada uno, pero esto es para repaso simple)
+//                    System.out.println("Operando 1: ");
+//                    operando1 = teclado.nextInt();
+//                    System.out.println("Operando 2: ");
+//                    operando2 = teclado.nextInt();
+//
+//                    //Para controlar que los datos están correctamente introducidos.
+//                    solicitarDatos = false;
+//                } catch (InputMismatchException ime) {
+//
+//                    //Código para tratar el error
+//                    System.out.println("Se ha introducido texto en lugar de números"
+//                            + "\nVuelva a introducir los datos");
+//                    teclado.nextLine();
+//                }
+//            } while (solicitarDatos); // Bucle que controla la excepción
+//        } while (!((operando1 > -100 && operando1 < 100) && (operando2 > -100 && operando2 < 100)));
+
+        operando1 = leerDato(1);
+        operando2 = leerDato(2);
         teclado.nextLine();
         int resultado = 0;
         do {
-            System.out.println("Opciones del programa"
-                    + "\n1.Sumar"
-                    + "\n2.Restar"
-                    + "\n3.Multiplicar"
-                    + "\n4.Dividir"
-                    + "\n5.Salir");
+            mostrarMenu();
 
             opcion = teclado.nextLine();
 
@@ -107,7 +168,10 @@ public class Calculadora {
                         System.out.println("Introduce un número correcto");
                         
             }
-            System.out.println("El resultado es: " + resultado);
+            if(opcion != "5" || opcion == "1" || opcion == "2" || opcion == "3" || opcion == "4"){
+                System.out.println("El resultado es: " + resultado);
+            }
+            
         } while (!opcion.equals("5"));
     }
 
