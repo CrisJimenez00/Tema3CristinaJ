@@ -76,8 +76,9 @@ public class Calculadora {
     }
     
     
-    private static int leerDato(int numero){
+    private static int leerDato(){
         boolean solicitarDatos = true;
+        int numero = 0;
         do{
          do {
                 try {
@@ -112,30 +113,12 @@ public class Calculadora {
 
         //Comienzo del programa
         System.out.println("Bienvenido al calculator");
-//        do{
-//         do {
-//                try {
-//                    //Bloque candidato a lanzar la excepcion
-//                    //(Podemos hacer el try catch a cada uno, pero esto es para repaso simple)
-//                    System.out.println("Operando 1: ");
-//                    operando1 = teclado.nextInt();
-//                    System.out.println("Operando 2: ");
-//                    operando2 = teclado.nextInt();
-//
-//                    //Para controlar que los datos están correctamente introducidos.
-//                    solicitarDatos = false;
-//                } catch (InputMismatchException ime) {
-//
-//                    //Código para tratar el error
-//                    System.out.println("Se ha introducido texto en lugar de números"
-//                            + "\nVuelva a introducir los datos");
-//                    teclado.nextLine();
-//                }
-//            } while (solicitarDatos); // Bucle que controla la excepción
-//        } while (!((operando1 > -100 && operando1 < 100) && (operando2 > -100 && operando2 < 100)));
 
-        operando1 = leerDato(1);
-        operando2 = leerDato(2);
+        do{
+            operando1 = leerDato();
+            operando2 = leerDato();
+        } while (!((operando1 > -100 && operando1 < 100) && (operando2 > -100 && operando2 < 100)));
+        
         teclado.nextLine();
         int resultado = 0;
         do {
@@ -168,7 +151,7 @@ public class Calculadora {
                         System.out.println("Introduce un número correcto");
                         
             }
-            if(opcion != "5" || opcion == "1" || opcion == "2" || opcion == "3" || opcion == "4"){
+            if(!"5".equals(opcion) || "1".equals(opcion) || "2".equals(opcion) || "3".equals(opcion) || "4".equals(opcion)){
                 System.out.println("El resultado es: " + resultado);
             }
             
