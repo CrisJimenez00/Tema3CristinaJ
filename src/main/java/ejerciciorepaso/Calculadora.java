@@ -107,8 +107,6 @@ public class Calculadora {
         
 
         int operando1 = 0, operando2 = 0;
-        //Variable centinela
-        boolean solicitarDatos = true;
         String opcion;
 
         //Comienzo del programa
@@ -124,7 +122,7 @@ public class Calculadora {
         do {
             mostrarMenu();
 
-            opcion = teclado.nextLine();
+            opcion = String.valueOf(leerDato());
 
             switch(opcion){
                 case "1":
@@ -151,7 +149,8 @@ public class Calculadora {
                         System.out.println("Introduce un número correcto");
                         
             }
-            if(!"5".equals(opcion) || "1".equals(opcion) || "2".equals(opcion) || "3".equals(opcion) || "4".equals(opcion)){
+            if(!opcion.equals("5") || opcion.equals("1") || opcion.equals("2") 
+                    || opcion.equals("3") || opcion.equals("4")){
                 System.out.println("El resultado es: " + resultado);
             }
             
