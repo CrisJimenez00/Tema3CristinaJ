@@ -144,9 +144,6 @@ public class Calculadora {
                 case "5":
                         System.out.println("Hasta la próxima");
                     break;
-                    
-                default:
-                        System.out.println("Introduce un número correcto");
                         
             }
             if(!opcion.equals("5") || opcion.equals("1") || opcion.equals("2") 
