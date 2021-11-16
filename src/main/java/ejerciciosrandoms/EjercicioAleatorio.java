@@ -19,10 +19,7 @@ import java.util.Scanner;
 public class EjercicioAleatorio {
 
     //********METODOS*********
-    
-    
     //*****PARA GENERAR LOS ALEATORIOS********
-    
     //Método privado el cual genera un número aleatorio entre dos 
     //márgenes introducidos por parámetros
     private static int numAleatorio(int numMinimo, int numMaximo) {
@@ -35,7 +32,6 @@ public class EjercicioAleatorio {
     }
 
     //*******PARA LEER DATOS POR TECLADO*******
-    
     //Metodo privado el cual lee los datos por scanner 
     //y controla excepciones(que no se introduzca números en los nextInt())
     private static int leerDato() {
@@ -64,7 +60,6 @@ public class EjercicioAleatorio {
     }
 
     //*****PARA VER SI EL DATO POR TECLADO ES MAYOR O MENOR AL ALEATORIO******
-    
     //Método privado que se le introduce por parámetros el valor aleatorio 
     //y el valor que introduce el usuario por scanner, si el valor del usuario
     //es mayor al número aleatorio lo indica y si es a la inversa también
@@ -83,7 +78,6 @@ public class EjercicioAleatorio {
     }
 
     //******CONTROLA SI ACIERTAS O NO Y CUANTAS VIDAS QUEDAN******
-    
     //Método privado el cual es el cuerpo del juego y controla si 
     //te quedas sin vidas o  si sigues teniendo
     //El método se usa para ver si ganas, si tienes que seguir probando o si pierdes
@@ -113,7 +107,6 @@ public class EjercicioAleatorio {
     }
 
     //****CONTROLA LA EXCEPCIÓN DEL ALEATORIO*******
-    
     //Método privado que se le introduce por parámetros las vidas que tendrá
     //el usuario y el número generado de forma aleatoria.
     //Controla que no se introduzca el valor mayor en el mínimo y el menor en el máximo
@@ -143,6 +136,8 @@ public class EjercicioAleatorio {
             } catch (IllegalArgumentException iae) {
                 System.out.println("Has introducido el número más grande en el mínimo y el más pequeño en el máximo");
                 System.out.println("Introduce de nuevo los números");
+                //Pensar en cómo hacerlo ejecutable para corregirlo
+                //numeroSorpresa = numAleatorio(numMax, numMin);
             }
             //Mientras los valores no sean correctos seguirá pidiendo márgenes
         } while (repetir);
